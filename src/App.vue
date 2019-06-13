@@ -1,13 +1,16 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
+    <repo-list></repo-list>
   </div>
 </template>
 
 <script>
+import RepoList from './components/RepoList'
 export default {
-  name: 'App'
+  name: 'app',
+  components: {
+    RepoList
+}
 }
 </script>
 
