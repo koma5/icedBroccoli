@@ -2,7 +2,7 @@ import gql from 'graphql-tag'
 
 export const ALL_REPOS_QUERY = gql`
 query AllReposQuery {
-  user(login: "koma5") {
+  viewer {
       allRepos: repositories(first: 100) {
       edges {
         node {

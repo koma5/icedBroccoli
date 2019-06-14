@@ -2,7 +2,7 @@
   <div>
     <h4 v-if="loading">Loading...</h4>
     <repo-item
-      v-for="repo in user.allRepos.edges"
+      v-for="repo in viewer.allRepos.edges"
       :key="repo.node.url"
       :repo="repo">
     </repo-item>
@@ -25,7 +25,7 @@
       RepoItem
     },
     apollo: {
-      user: {
+      viewer: {
         query: ALL_REPOS_QUERY
       }
     }
