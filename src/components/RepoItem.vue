@@ -1,5 +1,5 @@
 <template>
-  <div>{{repo.name}} ({{repo.url}})</div>
+  <div>{{repo.node.name}} ({{repo.node.url}})</div>
 </template>
 
 <script>

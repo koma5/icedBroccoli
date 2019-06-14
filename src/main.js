@@ -9,8 +9,10 @@ import App from './App'
 
 Vue.config.productionTip = false
 
+let token = localStorage.getItem('GITHUB_AUTH_TOKEN')
+
 const httpLink = new HttpLink({
-  // You should use an absolute URL here
+  headers: { authorization: `Bearer ${token}` },
   uri: 'https://api.github.com/graphql'
 })
 
