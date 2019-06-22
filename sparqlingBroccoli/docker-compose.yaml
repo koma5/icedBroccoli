@@ -4,3 +4,6 @@ services:
 
     broccoli:
         image: stain/jena-fuseki
+        network_mode: host
+        expose:
+            - "3030"
