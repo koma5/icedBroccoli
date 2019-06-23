@@ -1,10 +1,9 @@
-import rdflib, requests, html, time
+import rdflib, requests, sys
 
 rdfs = rdflib.namespace.RDFS
 
 graph = rdflib.Graph()
 me = rdflib.URIRef("http://marcoko.ch/#i")
-broccoli = rdflib.URIRef("http://127.0.0.1:3030/broccoli/data")
 
 graph.parse(me)
 
@@ -17,5 +16,4 @@ headers = {
     'content-type': 'text/turtle',        
 }
 
-
-r = requests.post('http://127.0.0.1:3030/broccoli/data', headers=headers, data=ttl_to_post)
+r = requests.post(sys.argv[1], headers=headers, data=ttl_to_post)
