@@ -1,4 +1,5 @@
 gql = require('graphql-request')
+const request = require('request')
 const rdf = require('rdf');
 const { NamedNode, BlankNode, Literal } = rdf;
 
@@ -48,7 +49,7 @@ client.request(query)
         newTriples.push(
             new rdf.Triple(
                 node,
-                rdf.rdfsns('type'),
+                rdf.rdfns('type'),
                 doap('Project')
             )
         );
@@ -111,6 +112,21 @@ client.request(query)
     });
 
 
+    request(
+        {
+            uri: process.argv[2],
+            headers: { 'content-type': 'application/n-triples' },
+            body: newTriplesAsString,
+            method: 'POST'
+        }, (error, res, body) => {
+            if (error) {
+                console.error(error)
+                return
+            }
 
+            console.log(`statusCode: ${res.statusCode}`)
+            console.log(body)
+        }
+    );
 
 });
