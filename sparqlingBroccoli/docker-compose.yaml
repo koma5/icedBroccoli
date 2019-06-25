@@ -2,8 +2,10 @@ version: "3"
 
 services:
 
-    broccoli:
+    icedbroccoli:
         image: stain/jena-fuseki
-        network_mode: host
         expose:
             - "3030"
+        ports:
+            - "80:3030"
+        restart: always
