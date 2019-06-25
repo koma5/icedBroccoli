@@ -12,16 +12,16 @@ graph.parse('./succotash_seed.ttl', format="turtle") # maybe get it from github 
 
 resources_to_query = []
 
-for a in graph.triples((None, doap['programming-language'], None)):
-    resources_to_query.append(a[2])
+resources_to_query = graph.query(
+"""
+SELECT DISTINCT ?dbr
+WHERE {
+?s ?p ?dbr
+FILTER regex(str(?dbr),'http://dbpedia.org/resource/','i')
+}
+""")
 
-
-for a in graph.triples((None, dbo['computingPlatform'], None)):
-    resources_to_query.append(a[2])
-
-
-resources_to_query = set(resources_to_query)
-resources_to_query = [s.n3() for s in resources_to_query]
+resources_to_query = [s['dbr'].n3() for s in resources_to_query]
 sparql_values = ' '.join(resources_to_query)
 
 sparql_query = """
