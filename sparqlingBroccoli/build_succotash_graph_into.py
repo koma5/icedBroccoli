@@ -1,3 +1,5 @@
+# -*- encoding: utf-8 -*-
+
 import rdflib, requests, sys
 
 rdfs = rdflib.namespace.RDFS
@@ -53,7 +55,10 @@ params = {
 dbpedia_response = requests.get('https://dbpedia.org/sparql', params)
 
 
-ttl_to_post = dbpedia_response.text
+ttl_to_post = ''
+ttl_to_post += str(graph.serialize(format="turtle", encoding='utf-8'))
+ttl_to_post += dbpedia_response.text.encode('utf-8')
+
 
 headers = {
     'content-type': 'text/turtle',        
