@@ -3,9 +3,11 @@ version: "3"
 services:
 
     icedbroccoli:
-        image: stain/jena-fuseki
+        build: .
         expose:
             - "3030"
         ports:
             - "80:3030"
+        environment:
+            - ADMIN_PASSWORD
         restart: always
