@@ -16,4 +16,8 @@ headers = {
     'content-type': 'text/turtle',        
 }
 
-r = requests.post(sys.argv[1], headers=headers, data=ttl_to_post)
+params= { 'graph': sys.argv[1], }
+
+r = requests.post(sys.argv[1], headers=headers, data=ttl_to_post, params=params)
+
+print(r.text)

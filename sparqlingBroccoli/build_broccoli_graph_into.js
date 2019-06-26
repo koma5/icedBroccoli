@@ -108,15 +108,18 @@ client.request(query)
 
     newTriples.forEach(t => {
         newTriplesAsString += t.toNT();
-        console.log(t.toNT());
     });
 
+    graphUri = process.argv[2];
+    graphUriWithoutHash = graphUri.split('#')[0]
+    console.log(graphUri);
 
     request(
         {
-            uri: process.argv[2],
+            url: graphUriWithoutHash + '?',
             headers: { 'content-type': 'application/n-triples' },
             body: newTriplesAsString,
+            qs: { graph: graphUri },
             method: 'POST'
         }, (error, res, body) => {
             if (error) {

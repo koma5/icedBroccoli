@@ -50,15 +50,17 @@ params = {
     'format': 'text/turtle'
 }
 
-r = requests.get('https://dbpedia.org/sparql', params)
-
-print(r.text)
+dbpedia_response = requests.get('https://dbpedia.org/sparql', params)
 
 
-ttl_to_post = r.text
+ttl_to_post = dbpedia_response.text
 
 headers = {
     'content-type': 'text/turtle',        
 }
 
-r = requests.post(sys.argv[1], headers=headers, data=ttl_to_post)
+params = {  'graph': sys.argv[1], }
+
+r = requests.post(sys.argv[1], headers=headers, data=ttl_to_post, params=params)
+
+print(r.text)
