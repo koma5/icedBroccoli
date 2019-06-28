@@ -117,6 +117,7 @@ client.request(query)
     request(
         {
             url: graphUriWithoutHash + '?',
+            auth: { user: process.env['AUTH_BROCCOLI_USER'], password: process.env['AUTH_BROCCOLI_PASSWORD'] },
             headers: { 'content-type': 'application/n-triples' },
             body: newTriplesAsString,
             qs: { graph: graphUri },
