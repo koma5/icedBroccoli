@@ -2,3 +2,5 @@
 - [ ] clean up
 - [ ] integrate password generation into docker process
 - [ ] automake graph building (dockerize); once ever 2 hours for example
+- [ ] clear old triples in graphs
+- [ ] doc with pic
