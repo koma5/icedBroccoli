@@ -1,0 +1,4 @@
+- [ ] paging in graph query
+- [ ] clean up
+- [ ] integrate password generation into docker process
+- [ ] automake graph building (dockerize); once ever 2 hours for example
