@@ -121,7 +121,7 @@ client.request(query)
             headers: { 'content-type': 'application/n-triples' },
             body: newTriplesAsString,
             qs: { graph: graphUri },
-            method: 'POST'
+            method: 'PUT'
         }, (error, res, body) => {
             if (error) {
                 console.error(error)
