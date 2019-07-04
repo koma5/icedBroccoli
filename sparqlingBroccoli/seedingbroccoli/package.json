@@ -1,0 +1,16 @@
+{
+  "name": "seedingbroccoli",
+  "version": "1.0.0",
+  "description": "",
+  "main": "build_broccoli_graph_into.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "graphql-request": "^1.8.2",
+    "rdf": "^4.1.0",
+    "request": "^2.88.0"
+  }
+}
