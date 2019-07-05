@@ -13,4 +13,4 @@ RUN npm install
 
 RUN pip install -r requirements.txt
 
-CMD bash hotShit.sh
+CMD bash build_broccoli_named_graphs.sh
