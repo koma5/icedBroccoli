@@ -4,3 +4,4 @@
 - [x] automake graph building (dockerize); once ever 2 hours for example
 - [x] clear old triples in graphs
 - [ ] doc with pic
+- [ ] fill #code graph with id based in /broccoli and sameAs succotash/#
