@@ -14,20 +14,20 @@
 
 <#code> a :Graph ;
    rdf:description "A graph of code and repositories with a connection to Marco Koch."@en ; 
-   rdfg:subGraphOf <#default> ;
+   rdfg:subGraphOf <> ;
    :maker <http://marcoko.ch/#i> . 
 
 <#koma5> a :Graph ;
    rdf:description "Sponged social data about Marco Koch."@en ;
-   rdfg:subGraphOf <#default> ;
+   rdfg:subGraphOf <> ;
    :maker <http://marcoko.ch/#i> .
 
 <#succotash> a :Graph ;
    rdf:description "The base dataset for the website https://5th.ch/succotash which serves as protfolio for Marco Koch."@en ;
-   rdfg:subGraphOf <#default> ;
+   rdfg:subGraphOf <> ;
    :maker <http://marcoko.ch/#i> .
 
 <#dbpedia> a :Graph ;
    rdf:description "some sponged triples from dbpedia in relation with a resource in the graph broccoli."@en ;
-   rdfg:subGraphOf <#default> ;
+   rdfg:subGraphOf <> ;
    :maker <http://marcoko.ch/#i> . 
