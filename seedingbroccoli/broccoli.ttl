@@ -5,23 +5,28 @@
 @prefix : <http://xmlns.com/foaf/0.1/> .
 @base <http://icedbroccoli.5th.ch/broccoli> .
 
-
 <> a :Graph ;
    rdf:description "broccoli union of all subgraphs in this dataset."@en ;
    void:sparqlEndpoint <http://icedbroccoli.5th.ch/broccoli/sparql> ;
+   :depiction <https://raw.githubusercontent.com/koma5/icedBroccoli/master/sparql_endpoint.jpg> ;
+   :homepage <https://github.com/koma5/icedBroccoli#icedbroccoli5thch>  ;
    :maker <http://marcoko.ch/#i> .
+
 <#code> a :Graph ;
    rdf:description "A graph of code and repositories with a connection to Marco Koch."@en ; 
    rdfg:subGraphOf <#default> ;
    :maker <http://marcoko.ch/#i> . 
+
 <#koma5> a :Graph ;
    rdf:description "Sponged social data about Marco Koch."@en ;
    rdfg:subGraphOf <#default> ;
    :maker <http://marcoko.ch/#i> .
+
 <#succotash> a :Graph ;
    rdf:description "The base dataset for the website https://5th.ch/succotash which serves as protfolio for Marco Koch."@en ;
    rdfg:subGraphOf <#default> ;
    :maker <http://marcoko.ch/#i> .
+
 <#dbpedia> a :Graph ;
    rdf:description "some sponged triples from dbpedia in relation with a resource in the graph broccoli."@en ;
    rdfg:subGraphOf <#default> ;
